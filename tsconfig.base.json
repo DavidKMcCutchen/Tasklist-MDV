@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@tasklist/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@tasklist/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@tasklist/core-data": ["libs/core-data/src/index.ts"],
+      "@tasklist/material": ["libs/material/src/index.ts"],
+      "@tasklist/ui-login": ["libs/ui-login/src/index.ts"],
+      "@tasklist/core-state": ["libs/core-state/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,10 @@
+<div class="tasks-container">
+  <div class="list-container">
+    <tasklist-tasks-list
+      [tasks]="tasks$ | async"
+      (selected)="selectTask($event)"
+      (create)="createTask()"
+      (deleted)="deleteTask($event)"
+    ></tasklist-tasks-list>
+  </div>
+</div>

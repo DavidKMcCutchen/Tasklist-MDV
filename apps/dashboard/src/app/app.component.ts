@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@tasklist/api-interfaces';
+
 
 @Component({
   selector: 'tasklist-root',
@@ -8,6 +7,10 @@ import { Message } from '@tasklist/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'TaskList';
+  links= [
+    {path:'', icon: 'home', title: 'Home'},
+    {path: '/tasks', icon: 'view_list', title: 'Tasks'}
+  ]
+  
 }

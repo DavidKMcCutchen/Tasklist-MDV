@@ -1,0 +1,28 @@
+<div class="details-container">
+  <mat-card *ngIf="(selectedTask$ | async) as selectedTask">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>
+          <span *ngIf="selectedTask.id; else elseBlock">{{ selectedTask.name }}</span>
+          <ng-template #elseBlock>Create a Task</ng-template>
+        </h1>
+      </mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="form" #formDirective="ngForm" (submit)="saveTask(formDirective)">
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width">
+          <input matInput placeholder="Name" formControlName="name" type="text" name="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full-width">
+          <input matInput placeholder="Description" formControlName="description" type="text" name="description"/>
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-button color="primary">
+          {{ selectedTask?.id ? 'Save' : 'Create' }}
+        </button>
+        <button type="button" mat-button (click)="cancel()">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
